@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nabeel Arif | Developer Portfolio</title>
+    <meta name="description" content="Portfolio of Nabeel Arif, focusing on Backend Systems, Data Systems, Developer Infrastructure, and Machine Learning.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Public+Sans:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #fff;
+            --text: #1a1a1a;
+            --accent: #d32f2f; /* Dave Rupert-esque red accent */
+            --muted: #666;
+            --border: #eee;
+            --font-main: 'Public Sans', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+            --max-width: 800px;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #111;
+                --text: #f5f5f5;
+                --muted: #aaa;
+                --border: #222;
+            }
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        header, main, footer {
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        /* --- TYPOGRAPHY --- */
+        h1, h2, h3 { font-weight: 900; line-height: 1.1; margin-bottom: 1rem; }
+        h1 { font-size: 3.5rem; letter-spacing: -0.04em; }
+        h2 { font-size: 2rem; border-bottom: 4px solid var(--accent); display: inline-block; margin-top: 3rem; margin-bottom: 2rem; }
+        h3 { font-size: 1.5rem; margin-top: 1rem; }
+        p { margin-bottom: 1.5rem; }
+        .mono { font-family: var(--font-mono); font-size: 0.9rem; color: var(--muted); }
+        .tag { display: inline-block; background: var(--border); padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.8rem; margin-right: 0.5rem; font-family: var(--font-mono); }
+
+        /* --- ABOUT SECTION --- */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+            align-items: start;
+            margin-bottom: 4rem;
+        }
+        .profile-photo {
+            width: 100%;
+            border-radius: 8px;
+            filter: grayscale(100%);
+            transition: filter 0.3s ease;
+            border: 1px solid var(--border);
+        }
+        .profile-photo:hover { filter: grayscale(0%); }
+        .focus-areas { font-weight: 700; color: var(--accent); }
+
+        /* --- PROJECT SECTION --- */
+        .project-list { list-style: none; }
+        .project-item {
+            margin-bottom: 5rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .project-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; }
+        .live-link {
+            font-family: var(--font-mono);
+            font-weight: 700;
+            color: #fff;
+            background: var(--accent);
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-bottom: 1rem;
+            transition: transform 0.2s ease;
+        }
+        .live-link:hover { transform: scale(1.05); }
+        
+        .project-meta { margin-bottom: 1rem; }
+        .project-images {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .project-images img {
+            width: 100%;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        .tech-stack { margin-top: 1rem; }
+
+        /* --- FOOTER --- */
+        footer {
+            margin-top: 6rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--muted);
+            font-family: var(--font-mono);
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2.5rem; }
+            .about-grid { grid-template-columns: 1fr; }
+            .profile-photo { max-width: 200px; margin: 0 auto 1rem; display: block; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <p class="mono">/ portfolio / nabeel-arif</p>
+        <h1>Nabeel Arif</h1>
+    </header>
+
+    <main>
+        <section id="about" class="about-grid">
+            <img src="assets/nabeel-portrait.jpg" alt="Nabeel Arif" class="profile-photo">
+            <div>
+                <p>Hello. I'm Nabeel, a developer building infrastructure for the next generation of software.</p>
+                <p>My work centers on <span class="focus-areas">Backend Systems, Data Engineering, Infrastructure Automation, and Machine Learning</span>. I focus on creating resilient, structured data pipelines and automating complex developer workflows.</p>
+                <p>Currently exploring how agentic workflows and containerized orchestration can redefine developer productivity.</p>
+            </div>
+        </section>
+
+        <h2>Selected Projects</h2>
+
+        <div class="project-list">
+            <!-- PROJECT: SharedCare -->
+            <article class="project-item">
+                <div class="project-header">
+                    <h3>SharedCare / Action for Children</h3>
+                    <span class="mono">Capstone Project</span>
+                </div>
+                <div class="project-meta">
+                    <span class="tag">Node.js</span><span class="tag">MongoDB</span><span class="tag">Firebase</span><span class="tag">REST APIs</span>
+                </div>
+                <p>A specialized backend system designed to modernize questionnaire intake for a major nonprofit. I replaced fragmented manual processes with a centralized data pipeline, enabling secure client data collection and structured reporting.</p>
+                <div class="project-images">
+                    <img src="assets/sharecare-hero.png" alt="SharedCare Interface">
+                    <img src="assets/sharecare-onboarding.png" alt="SharedCare Onboarding Flow">
+                    <img src="assets/sharecare-dashboard.png" alt="SharedCare Plan Management">
+                </div>
+            </article>
+
+            <!-- PROJECT: LazyAgent -->
+            <article class="project-item">
+                <div class="project-header">
+                    <h3>LazyAgent</h3>
+                    <a href="https://youtu.be/hbMz-kXCTk0" class="live-link">WATCH DEMO →</a>
+                </div>
+                <div class="project-meta">
+                    <span class="tag">Python</span><span class="tag">Docker</span><span class="tag">CLI</span><span class="tag">tmux</span>
+                </div>
+                <p>Infrastructure automation for developers. LazyAgent orchestrates isolated, containerized environments through a command-line interface. It utilizes persistent SSH and tmux sessions to ensure that automated agents can continue long-running tasks even when the developer disconnects.</p>
+            </article>
+
+            <!-- PROJECT: SeatSense -->
+            <article class="project-item">
+                <div class="project-header">
+                    <h3>SeatSense</h3>
+                    <a href="https://quiet-zone-bot.lovable.app/" class="live-link">LIVE APP →</a>
+                </div>
+                <div class="project-meta">
+                    <span class="tag">Machine Learning</span><span class="tag">Data Pipelines</span><span class="tag">Backend</span>
+                </div>
+                <p>Built for Hack OHI/O, SeatSense uses predictive modeling to estimate study space occupancy across campus. By analyzing usage patterns, the system helps students find productive environments in real-time.</p>
+                <div class="project-images">
+                    <img src="assets/seatsense-ui.png" alt="SeatSense Occupancy UI">
+                </div>
+            </article>
+
+            <!-- PROJECT: Healthcare ML -->
+            <article class="project-item">
+                <div class="project-header">
+                    <h3>Healthcare Predictive Modeling</h3>
+                    <span class="mono">Research Project</span>
+                </div>
+                <div class="project-meta">
+                    <span class="tag">Python</span><span class="tag">Scikit-Learn</span><span class="tag">Data Analysis</span>
+                </div>
+                <p>Exploration of ML techniques on complex healthcare datasets. This project focuses on the rigorous preparation of sensitive data and the evaluation of statistical models to identify risk factors and predictive trends.</p>
+                <div class="project-images">
+                    <img src="assets/healthcare-confusion-matrix.jpg" alt="ML Confusion Matrix">
+                    <img src="assets/healthcare-stress-level.jpg" alt="Physical Activity vs Stress Analysis">
+                </div>
+            </article>
+
+            <!-- PROJECT: BuckeyeBoard -->
+            <article class="project-item">
+                <div class="project-header">
+                    <h3>BuckeyeBoard</h3>
+                    <a href="https://quirky-canvas-suite.lovable.app/" class="live-link">LIVE APP →</a>
+                </div>
+                <div class="project-meta">
+                    <span class="mono">IBM SkillsBuild x OSU Hackathon</span>
+                </div>
+                <p>A unified platform concept for academic planning. BuckeyeBoard aggregates information from disconnected university systems into a single AI-assisted dashboard, helping students prioritize tasks and track deadlines.</p>
+                <div class="project-images">
+                    <img src="assets/buckeyeboard-feed.png" alt="BuckeyeBoard Unified Feed">
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Nabeel Arif // Built with precision.</p>
+    </footer>
+
+</body>
+</html>
